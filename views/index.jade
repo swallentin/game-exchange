@@ -1,2 +1,40 @@
-h1= title
-p Welcome to #{title}
+include mixins/features
+
+extends layout
+
+block primary-content
+  .row
+    div(class='twelve columns')
+      .panel
+        img(src='http://dummyimage.com/600x300/808080/fff/&text=Features+titles')
+  .row
+    div(class='six columns')
+      .panel
+        h4 My games
+        mixin game-list(gamelist)
+    div(class='six columns')
+      .panel
+        h4 Borrowed games
+        mixin game-list(gamelist)
+      
+  .row
+    div(class='four columns')
+      .panel
+        p Add a game
+    div(class='four columns')
+      .panel
+        p Edit a game
+    div(class='four columns')
+      .panel
+        p Invite a friend
+
+block secondary-content
+  mixin authentication()
+
+  h4 Latest games
+  p List recently added games!
+  mixin game-list(gamelist)
+
+  h4 List of available game
+  p Is it time to find out a new game?
+  mixin game-list(gamelist)
