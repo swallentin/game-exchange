@@ -27,11 +27,13 @@ mixin game-list(list)
 
 mixin game(game)
   li  
-    a(href='#') A Game
+    a(href='/game/'+game._id) #{game.title}
     br
-    | Information about the this game
+    | #{game.information}
     br
-    | Waiting list
+    ul.tags
+    - for tag i game.tags
+      p #{tag}
 
 mixin footer()
   .row

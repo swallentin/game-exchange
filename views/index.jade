@@ -11,16 +11,16 @@ block primary-content
     div(class='six columns')
       .panel
         h4 My games
-        mixin game-list(gamelist)
+        mixin game-list(games)
     div(class='six columns')
       .panel
         h4 Borrowed games
-        mixin game-list(gamelist)
+        mixin game-list(games)
       
   .row
     div(class='four columns')
       .panel
-        p Add a game
+          a(href='/game/new') Add a game
     div(class='four columns')
       .panel
         p Edit a game
@@ -33,8 +33,8 @@ block secondary-content
 
   h4 Latest games
   p List recently added games!
-  mixin game-list(gamelist)
+  mixin game-list(games)
 
   h4 List of available game
   p Is it time to find out a new game?
-  mixin game-list(gamelist)
+  mixin game-list(games)

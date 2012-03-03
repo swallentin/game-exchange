@@ -1,0 +1,14 @@
+extends layout
+
+block primary-content
+  h1 #{title}
+  form(method='post')
+    div
+      div
+        span Title :
+        input(type='text', name='title', id='editGameTitle')
+      div
+        span Body :
+        textarea(name='information', rows=20, id='editGameInformation')
+      div#editArticleSubmit
+        input(type='submit', value='Send')

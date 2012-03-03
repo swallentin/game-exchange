@@ -1,8 +1,8 @@
 var express = require('express')
-  , routes = require('./routes'),
-  everyauth = require('everyauth'),
-  conf = require("./conf"),
-  gameProvider = require('./lib/gameprovider-memory');
+  , routes = require('./routes')
+  , everyauth = require('everyauth')
+  , util = require('util')
+  , conf = require("./conf");
 
 everyauth.debug = true;
 
@@ -135,15 +135,9 @@ everyauth.helpExpress(app);
 
 // Routes
 
-app.get('/game-test', function(req, res){
-  res.send('test');
-  
-  // gameProvider.findAll(function(error, docs){
-  //   res.send(docs);
-  // });
-});
-
 app.get('/', routes.index);
+app.get('/game/new', routes.new_game);
+app.post('/game/new', routes.post_new_game);
 
 // app.get('/', function (req, res) {
 //   res.render('home');

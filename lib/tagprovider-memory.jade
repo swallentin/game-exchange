@@ -1,0 +1,73 @@
+var TagCounter = 0;
+
+TagProvider = function(){};
+TagProvider.prototype.dummyData = [];
+
+TagProvider.prototype.findAll = function(callback) {
+  callback(null, this.dummyData)
+};
+
+TagProvider.prototype.findById = function(id, callback) {
+  var result = null;
+  for (var i=0; i < this.dummyData.length; i++) {
+    var item = this.dummyData[i];
+    if( item._id = id) {
+      result = item;
+      break;
+    }
+  };
+  callback(null, result);
+};
+ 
+TagProvider.prototype.save = function(Tags, callback) {
+  var Tag = null;
+  
+  if( typeof(Tags.length) == "undefined" ){
+    Tags = [Tags];
+  }
+  for (var i=0; i < Tags.length; i++) {
+    Tag = Tags[i];
+    Tag._id = TagCounter++;
+    Tag.created_at = new Date();
+    
+    if(Tags.comments === undefined){
+      Tags.comments = [];
+    }
+    
+    for (var j=0; j < Tags.comments.length; j++) {
+      Tags.comments[j].created_at = new Date();
+    }
+    this.dummyData[this.dummyData.length] = Tag;    
+  }
+  callback(null, Tags);
+};
+var mockupData = [{
+  title: 'Tag one', 
+  information: 'Body one', 
+  comments: 
+    [{
+      author:'Troll One', 
+      comment:'I love it'
+    }, 
+    {
+      author:'Troll Two', 
+      comment:'This is rubbish!'
+    }]
+},
+{
+  title: 'Tag two', 
+  information: 'Body two'
+},
+{
+  title: 'Tag three', 
+  information: 'Body three'
+},
+{
+  title: 'Tag four', 
+  information: 'Body four'
+}
+];
+
+new TagProvider().save(mockupData, function(error, Tags){});
+  
+exports.TagProvider = TagProvider;
