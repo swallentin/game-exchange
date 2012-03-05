@@ -1,7 +1,4 @@
-include mixins/features
-
-- var gamelist = [ { name: " A Game", link: "#", information: "Information about the this game" },{ name: " A Game", link: "#", information: "Information about the this game"} ]
-
+include mixins/features/common
 
 !!! html
 //if lt IE 7
@@ -15,7 +12,7 @@ html(class="no-js", lang="en")
   // <![endif]
   head
     meta(charset='utf-8')
-    title= title
+    title
     
     // include CSS Files
     link(rel='stylesheet', href='/stylesheets/foundation.css')
@@ -41,6 +38,7 @@ html(class="no-js", lang="en")
           block primary-content
 
         div(class='four columns')
+          mixin authentication()
           block secondary-content
       mixin footer()
     // container

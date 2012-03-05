@@ -1,0 +1,15 @@
+mixin game-list(list)
+  ul.games
+    - for game in list
+      mixin game(game)
+
+mixin game(game)
+  li  
+    a(href='/game/'+game._id) #{game.title}
+    br
+    | #{game.information}
+    br
+    ul.tags
+    - for tag i game.tags
+      p #{tag}
+

@@ -1,4 +1,4 @@
-include mixins/features
+include mixins/features/game
 
 extends layout
 
@@ -11,12 +11,9 @@ block primary-content
     div(class='six columns')
       .panel
         h4 My games
-        mixin game-list(games)
     div(class='six columns')
       .panel
         h4 Borrowed games
-        mixin game-list(games)
-      
   .row
     div(class='four columns')
       .panel
@@ -29,12 +26,8 @@ block primary-content
         p Invite a friend
 
 block secondary-content
-  mixin authentication()
-
   h4 Latest games
   p List recently added games!
-  mixin game-list(games)
 
   h4 List of available game
   p Is it time to find out a new game?
-  mixin game-list(games)
