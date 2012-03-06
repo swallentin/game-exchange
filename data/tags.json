@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Action",
+        "information": "Action games",
+        "games": [
+            "God of War 3",
+            "Prince of Persia"
+        ],
+        "followers": [
+            "Stephan Wallentin",
+            "John Torres"
+        ]
+    },
+    {
+        "title": "Sports",
+        "information": "Sports",
+        "games": [
+            "God of War 3",
+            "Prince of Persia"
+        ],
+        "followers": [
+            "John Torres",
+            "Joacim Gamme"
+        ]
+    },
+    {
+        "title": "Platform",
+        "information": "Body three",
+        "games": [
+            "Little Big Planet"
+        ],
+        "followers": [
+            "Astrid Blomberg",
+            "Maurico Estrella"
+        ]
+    },
+    {
+        "title": "First Person-Shooter",
+        "information": "Body four",
+        "games": [
+            "Modern Warfare 2",
+            "Call of Duty",
+            "Black Ops"
+        ],
+        "followers": [
+            "Guan Wang",
+            "Soya Estrella"
+        ]
+    }
+]

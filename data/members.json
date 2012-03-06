@@ -1,0 +1,71 @@
+[
+    {
+        "fbId": "",
+        "name": "Stephan Wallentin",
+        "games": [
+            "ModNation Racers",
+            "Need for Speed: Hot Pursuit",
+            "Ninja Gaiden Sigma 2 "
+        ],
+        "tags": [
+            "Sports",
+            "Racing",
+            "Action"
+        ],
+        "following": [
+            "Sports",
+            "Action",
+            "First Person-Shooter"
+        ]
+    },
+    {
+        "fbId": "",
+        "name": "Mauricio Estrella",
+        "games": [
+            "Last Rebellion",
+            "Metal Gear Solid HD Collection"
+        ],
+        "tags": [
+            "Adventure",
+            "Multiplayer"
+        ],
+        "following": [
+            "Sports",
+            "Action",
+            "First Person-Shooter"
+        ]
+    },
+    {
+        "fbId": "",
+        "name": "John Torres",
+        "games": [
+            "Final Fantasy XIII",
+            "Ico & Shadow of the Colossus Collection"
+        ],
+        "tags": [
+            "Role Playing",
+            "Fantasy"
+        ],
+        "following": [
+            "Sports",
+            "Action",
+            "First Person-Shooter"
+        ]
+    },
+    {
+        "fbId": "Joacim Gamme",
+        "games": [
+            "Dungeon Siege III",
+            "Dynasty Warriors 6"
+        ],
+        "tags": [
+            "Fantasy",
+            "Action"
+        ],
+        "following": [
+            "Sports",
+            "Action",
+            "First Person-Shooter"
+        ]
+    }
+]

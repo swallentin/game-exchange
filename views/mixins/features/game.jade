@@ -1,15 +1,15 @@
-mixin game-list(list)
+mixin games-list(list)
   ul.games
     - for game in list
-      mixin game(game)
+      mixin game-list-item(game)
 
-mixin game(game)
+mixin game-list-item(game)
   li  
-    a(href='/game/'+game._id) #{game.title}
+    a(href='/games/'+game._id) #{game.title}
     br
     | #{game.information}
-    br
-    ul.tags
-    - for tag i game.tags
-      p #{tag}
 
+mixin game(game)
+  h3 #{game.title}
+  p #{game.information}
+  a(href='/games/' + game._id + '/edit') Edit

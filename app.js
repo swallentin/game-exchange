@@ -1,48 +1,48 @@
 var siteConf = require('./lib/getConfig');
 
 var express = require('express')
-  , routes = require('./routes')
   , everyauth = require('everyauth')
   , util = require('util')
   , conf = require("./conf");
 
 var app = module.exports = express.createServer();
 
-// Authentication
-everyauth.debug = true;
-var usersById = {};
-var nextUserId = 0;
-var usersByFbId = {};
+var authentication = require('./lib/authentication').create(everyauth, app, conf);
 
-function addUser (source, sourceUser) {
-  var user;
-  if (arguments.length === 1) { // password-based
-    user = sourceUser = source;
-    user.id = ++nextUserId;
-    return usersById[nextUserId] = user;
-  } else { // non-password-based
-    user = usersById[++nextUserId] = {id: nextUserId};
-    user[source] = sourceUser;
-  }
-  return user;
-}
-
-everyauth.everymodule
-  .findUserById( function (id, callback) {
-    callback(null, usersById[id]);
-  });
-
-everyauth
-  .facebook
-    .appId(conf.fb.appId)
-    .appSecret(conf.fb.appSecret)
-    .findOrCreateUser( function (session, accessToken, accessTokenExtra, fbUserMetadata) {
-      return usersByFbId[fbUserMetadata.id] ||
-        (usersByFbId[fbUserMetadata.id] = addUser('facebook', fbUserMetadata));
-    })
-    .redirectPath('/');
-
-everyauth.helpExpress(app);
+// // Authentication
+// everyauth.debug = true;
+// var usersById = {};
+// var nextUserId = 0;
+// var usersByFbId = {};
+// 
+// function addUser (source, sourceUser) {
+//   var user;
+//   if (arguments.length === 1) { // password-based
+//     user = sourceUser = source;
+//     user.id = ++nextUserId;
+//     return usersById[nextUserId] = user;
+//   } else { // non-password-based
+//     user = usersById[++nextUserId] = {id: nextUserId};
+//     user[source] = sourceUser;
+//   }
+//   return user;
+// }
+// 
+// everyauth.everymodule
+//   .findUserById( function (id, callback) {
+//     callback(null, usersById[id]);
+//   });
+// 
+// everyauth
+//   .facebook
+//     .appId(conf.fb.appId)
+//     .appSecret(conf.fb.appSecret)
+//     .findOrCreateUser( function (session, accessToken, accessTokenExtra, fbUserMetadata) {
+//       return usersByFbId[fbUserMetadata.id] ||
+//         (usersByFbId[fbUserMetadata.id] = addUser('facebook', fbUserMetadata));
+//     })
+//     .redirectPath('/');
+var routes = require('./routes')(app);
 
 // Configuration
 app.configure(function() {
@@ -68,16 +68,27 @@ app.configure('production', function(){
   app.use(express.errorHandler()); 
 });
 
+
+routes.register();
 // Routes
+// 
+// app.get('/empty', function(req, res){
+//   res.render('empty.jade', {});
+// });
+// 
+// 
+// app.get('/', routes.index);
+// app.get('/games', routes.games);
+// app.get('/games/edit', routes.edit_game);
+// app.get('/games/:id', routes.game);
+// app.get('/games/:id/edit', routes.edit_game);
+// app.put('/games/:id', routes.put_game);
 
-app.get('/empty', function(req, res){
-  res.render('empty.jade', {});
-});
+
+// app.get('/game/edit/:id', routes.edit_game);
 
 
-app.get('/', routes.index);
-// app.get('/game/new', routes.new_game);
-// app.post('/game/new', routes.post_new_game);
+// app.post('/games/new', routes.post_new_game);
 
 // app.get('/', function (req, res) {
 //   res.render('home');

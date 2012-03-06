@@ -1,4 +1,4 @@
-include mixins/features/common
+include mixins/index
 
 !!! html
 //if lt IE 7
@@ -32,20 +32,19 @@ html(class="no-js", lang="en")
     .container
       .row
         div(class='twelve columns')
-          mixin header()
+          include partials/header.jade
       .row
         div(class='eight columns')
           block primary-content
-
         div(class='four columns')
           mixin authentication()
           block secondary-content
-      mixin footer()
+    include partials/footer.jade
     // container
     // Included JS Files
-    script(src='javascripts/jquery.min.js')
-    script(src='javascripts/modernizr.foundation.js')
-    script(src='javascripts/foundation.js')
-    script(src='javascripts/app.js')
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/modernizr.foundation.js')
+    script(src='/javascripts/foundation.js')
+    script(src='/javascripts/app.js')
     script(src='http://static.ak.fbcdn.net/connect/en_US/core.js')
     mixin liveReload()

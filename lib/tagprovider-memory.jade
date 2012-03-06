@@ -4,70 +4,120 @@ TagProvider = function(){};
 TagProvider.prototype.dummyData = [];
 
 TagProvider.prototype.findAll = function(callback) {
-  callback(null, this.dummyData)
+  callback(null, this.dummyData);
 };
 
 TagProvider.prototype.findById = function(id, callback) {
   var result = null;
   for (var i=0; i < this.dummyData.length; i++) {
     var item = this.dummyData[i];
-    if( item._id = id) {
+    if( item._id == id) {
       result = item;
       break;
     }
   };
   callback(null, result);
 };
- 
-TagProvider.prototype.save = function(Tags, callback) {
-  var Tag = null;
-  
-  if( typeof(Tags.length) == "undefined" ){
-    Tags = [Tags];
+
+TagProvider.prototype.findByGames(games, callback) {
+  var result;
+  if( typeof(games.length) == "undefined" ){
+    games = [games];
   }
-  for (var i=0; i < Tags.length; i++) {
+  
+}
+
+TagProvider.prototype.delete = function(id, callback) {
+  var item = null;
+  for (var i=0; i < this.dummyData.length; i++) {
+    item = this.dummyData[i];
+    if(item_i._id == id) {
+      item = dummyData.splice(i, 1);
+      break;
+    }
+    if(item == null)
+      callback(new Error('Item does not exist.'), item);
+    return callback(null, item);
+  };
+};
+ 
+TagProvider.prototype.save = function(tags, callback) {
+  var tag = null;
+  var test = undefined;
+  
+  if( typeof(tags.length) == "undefined" ){
+    tags = [tags];
+  }
+  
+  var isNotExistingTag;
+  for (var i=0; i < tags.length; i++) {
     Tag = Tags[i];
-    Tag._id = TagCounter++;
-    Tag.created_at = new Date();
-    
-    if(Tags.comments === undefined){
-      Tags.comments = [];
+
+    isNotExistingTag = tag._id === undefined;
+    if( isNotExistingTag ) {
+      tag._id = TagCounter++;
     }
     
-    for (var j=0; j < Tags.comments.length; j++) {
-      Tags.comments[j].created_at = new Date();
+    tag.created_at = new Date();
+    
+    if(tags.comments === undefined){
+      tags.comments = [];
     }
-    this.dummyData[this.dummyData.length] = Tag;    
+    
+    for (var j=0; j < tags.comments.length; j++) {
+      tags.comments[j].created_at = new Date();
+    }
+    var index = isNotExistingTag ? this.dummyData.length : tag._id;
+    this.dummyData[index] = tag;
   }
   callback(null, Tags);
 };
+
+var tags = [
+  {
+    name: "ps3"
+  },
+  {
+    name: "action"
+  }
+];
+
+var waiting = [
+  {
+    name:'Bob', 
+    comment:'I really want to play'
+  }
+];
+
 var mockupData = [{
-  title: 'Tag one', 
-  information: 'Body one', 
-  comments: 
-    [{
-      author:'Troll One', 
-      comment:'I love it'
-    }, 
-    {
-      author:'Troll Two', 
-      comment:'This is rubbish!'
-    }]
+  title: 'Action', 
+  information: 'Action games', 
+  games: ['God of War 3', 'Prince of Persia']
+  followers: ['Stephan Wallentin', 'John Torres']
 },
 {
-  title: 'Tag two', 
-  information: 'Body two'
+  title: 'Sports', 
+  information: 'Sports'
+  games: ['God of War 3', 'Prince of Persia']
+  followers: ['John Torres', 'Joacim Gamme']
+  
 },
 {
-  title: 'Tag three', 
+  title: 'Platform', 
   information: 'Body three'
+  games: ['Little Big Planet'],
+  followers: ['Astrid Blomberg', 'Maurico Estrella']
+  
 },
 {
-  title: 'Tag four', 
+  title: 'First Person-Shooter', 
   information: 'Body four'
+  games: ['Modern Warfare 2', 'Call of Duty: Black Ops'],
+  followers: ['Guan Wang', 'Soya Estrella']
+  
 }
 ];
 
 new TagProvider().save(mockupData, function(error, Tags){});
-  
+
 exports.TagProvider = TagProvider;
