@@ -12,7 +12,7 @@
         ]
     },
     {
-        "title": "Sports",
+        "title": "Action-adventure",
         "information": "Sports",
         "games": [
             "God of War 3",
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "title": "Platform",
+        "title": "Adventure",
         "information": "Body three",
         "games": [
             "Little Big Planet"
@@ -35,7 +35,7 @@
         ]
     },
     {
-        "title": "First Person-Shooter",
+        "title": "Role-Playing",
         "information": "Body four",
         "games": [
             "Modern Warfare 2",
@@ -46,5 +46,31 @@
             "Guan Wang",
             "Soya Estrella"
         ]
-    }
+    },
+      {
+        "title": "Simulation",
+        "information": "Body four",
+        "games": [
+            "Modern Warfare 2",
+            "Call of Duty",
+            "Black Ops"
+        ],
+        "followers": [
+            "Guan Wang",
+            "Soya Estrella"
+        ]
+      },
+      {
+        "title": "Strategy",
+        "information": "Body four",
+        "games": [
+            "Modern Warfare 2",
+            "Call of Duty",
+            "Black Ops"
+        ],
+        "followers": [
+            "Guan Wang",
+            "Soya Estrella"
+        ]
+      }
 ]

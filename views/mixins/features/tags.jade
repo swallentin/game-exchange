@@ -1,0 +1,15 @@
+mixin tags-list(list)
+  ul.tags
+    - for tag in list
+      mixin tags-list-item(tag)
+
+mixin tags-list-item(tag)
+  li  
+    a(href='/tags/'+tag._id) #{tag.title}
+    br
+    | #{tag.information}
+
+mixin tag(tag)
+  h3 #{tag.title}
+  p #{tag.information}
+  a(href='/tags/' + tag._id + '/edit') Edit

@@ -1,0 +1,15 @@
+extends ../layout
+
+block primary-content
+  h1 Edit Tag
+  form(action='/tags/' + tag._id, method='POST')
+    input(type='hidden', name='_method', value='PUT')
+    div
+      label(for='tag_title') Title :
+      input(type='text', id='tag_title', name='tag[title]', value=tag.title)
+    div
+      label(for='tag_information') Information :
+      textarea(id='tag_information', name='tag[information]', rows=20 ) #{tag.information}
+    div
+      input(type='submit', value='Send')
+
