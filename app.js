@@ -5,44 +5,19 @@ var express = require('express')
   , util = require('util')
   , conf = require("./conf");
 
+var DataProvider = require('./lib/dataproviders/memory/dataprovider-memory.js').DataProvider;
+var MemberProvider = require('./lib/dataproviders/memory/memberprovider-memory.js').MemberProvider;
+var Authentication = require('./lib/authentication').Authentication;
+
 var app = module.exports = express.createServer();
 
-var authentication = require('./lib/authentication').create(everyauth, app, conf);
+var memberProvider = new MemberProvider(require('./data/members.json'));
+var gameProvider = new DataProvider(require('./data/games.json'));
+var tagProvider = new DataProvider(require('./data/tags.json'));
 
-// // Authentication
-// everyauth.debug = true;
-// var usersById = {};
-// var nextUserId = 0;
-// var usersByFbId = {};
-// 
-// function addUser (source, sourceUser) {
-//   var user;
-//   if (arguments.length === 1) { // password-based
-//     user = sourceUser = source;
-//     user.id = ++nextUserId;
-//     return usersById[nextUserId] = user;
-//   } else { // non-password-based
-//     user = usersById[++nextUserId] = {id: nextUserId};
-//     user[source] = sourceUser;
-//   }
-//   return user;
-// }
-// 
-// everyauth.everymodule
-//   .findUserById( function (id, callback) {
-//     callback(null, usersById[id]);
-//   });
-// 
-// everyauth
-//   .facebook
-//     .appId(conf.fb.appId)
-//     .appSecret(conf.fb.appSecret)
-//     .findOrCreateUser( function (session, accessToken, accessTokenExtra, fbUserMetadata) {
-//       return usersByFbId[fbUserMetadata.id] ||
-//         (usersByFbId[fbUserMetadata.id] = addUser('facebook', fbUserMetadata));
-//     })
-//     .redirectPath('/');
-var routes = require('./routes')(app);
+var authentication = new Authentication(memberProvider, everyauth, app, conf);
+
+var routes = require('./routes')(app, tagProvider, gameProvider, memberProvider );
 
 // Configuration
 app.configure(function() {

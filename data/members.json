@@ -1,71 +1,428 @@
 [
     {
-        "fbId": "Stephan",
         "name": "Stephan Wallentin",
+        "username": "stephan.wallentin",
         "games": [
-            "ModNation Racers",
-            "Need for Speed: Hot Pursuit",
-            "Ninja Gaiden Sigma 2 "
+            {
+                "_id": 40,
+                "title": "Battlefield 3"
+            },
+            {
+                "_id": 321,
+                "title": "Little Big Planet"
+            },
+            {
+                "_id": 693,
+                "title": "Uncharted 3: Drake's Deception"
+            }
         ],
         "tags": [
-            "Sports",
-            "Racing",
-            "Action"
+            {
+                "_id": 0,
+                "title": "Sports"
+            },
+            {
+                "_id": 0,
+                "title": "Racing"
+            },
+            {
+                "_id": 0,
+                "title": "Action"
+            }
         ],
         "following": [
             "Sports",
             "Action",
             "First Person-Shooter"
-        ]
+        ],
+        "facebook": {
+            "id": "664271190",
+            "name": "StephanWallentin",
+            "first_name": "Stephan",
+            "last_name": "Wallentin",
+            "link": "http: //www.facebook.com/stephan.wallentin",
+            "username": "stephan.wallentin",
+            "work": [
+                {
+                    "employer": {
+                        "id": "269012261862",
+                        "name": "EFEnglishtown"
+                    },
+                    "location": {
+                        "id": "106324046073002",
+                        "name": "Shanghai, China"
+                    },
+                    "position": {
+                        "id": "138025946232509",
+                        "name": "Instigator"
+                    },
+                    "start_date": "2011-01"
+                },
+                {
+                    "employer": {
+                        "id": "110231972330203",
+                        "name": "Creuna"
+                    },
+                    "location": {
+                        "id": "106505586052951",
+                        "name": "Stockholm, Sweden"
+                    },
+                    "position": {
+                        "id": "165647693483232",
+                        "name": "TechLead, AgileDeveloper"
+                    },
+                    "with": [
+                        {
+                            "id": "585596499",
+                            "name": "PetronellaTuresson"
+                        },
+                        {
+                            "id": "638304697",
+                            "name": "PärAxelsson"
+                        },
+                        {
+                            "id": "568924149",
+                            "name": "PärFröberg"
+                        },
+                        {
+                            "id": "702262921",
+                            "name": "FredrikMarcus"
+                        },
+                        {
+                            "id": "1323840471",
+                            "name": "MarkusBergh"
+                        },
+                        {
+                            "id": "567813754",
+                            "name": "MarkusBjörk"
+                        },
+                        {
+                            "id": "587839127",
+                            "name": "MartinOdhelius"
+                        }
+                    ],
+                    "start_date": "2008-04",
+                    "end_date": "2011-04"
+                },
+                {
+                    "employer": {
+                        "id": "109435382417297",
+                        "name": "DropIt"
+                    },
+                    "location": {
+                        "id": "106505586052951",
+                        "name": "Stockholm, Sweden"
+                    },
+                    "position": {
+                        "id": "144095685610402",
+                        "name": "SystemDeveloper"
+                    },
+                    "with": [
+                        {
+                            "id": "768553297",
+                            "name": "FredrikKarlsson"
+                        },
+                        {
+                            "id": "714026957",
+                            "name": "AndreasNorman"
+                        },
+                        {
+                            "id": "605914848",
+                            "name": "HieuDoan"
+                        },
+                        {
+                            "id": "639287852",
+                            "name": "HenrikNyström"
+                        },
+                        {
+                            "id": "626098096",
+                            "name": "JohanYdring"
+                        },
+                        {
+                            "id": "723696723",
+                            "name": "HenricCarlsson"
+                        },
+                        {
+                            "id": "569588335",
+                            "name": "TobiasNilsson"
+                        },
+                        {
+                            "id": "533578377",
+                            "name": "TomasUnestad"
+                        },
+                        {
+                            "id": "597946753",
+                            "name": "MarkusUllmark"
+                        },
+                        {
+                            "id": "613632988",
+                            "name": "MattiasEriksson"
+                        },
+                        {
+                            "id": "631348503",
+                            "name": "MagnusvonWachenfeldt"
+                        },
+                        {
+                            "id": "721849417",
+                            "name": "JohanHörlén"
+                        },
+                        {
+                            "id": "732577937",
+                            "name": "TimOhlén"
+                        },
+                        {
+                            "id": "670646423",
+                            "name": "TimeaEriksson"
+                        },
+                        {
+                            "id": "647421499",
+                            "name": "BjörnEhlert"
+                        },
+                        {
+                            "id": "701303828",
+                            "name": "DickWennberg"
+                        },
+                        {
+                            "id": "612171833",
+                            "name": "CalleBjernekull"
+                        },
+                        {
+                            "id": "580882746",
+                            "name": "JohanDriessen"
+                        },
+                        {
+                            "id": "717357039",
+                            "name": "CeciliaBingert"
+                        },
+                        {
+                            "id": "1840337353",
+                            "name": "ChristianUlvaeus"
+                        },
+                        {
+                            "id": "579965956",
+                            "name": "CarlMagnusSwahn"
+                        },
+                        {
+                            "id": "630131238",
+                            "name": "AndreasNylin"
+                        },
+                        {
+                            "id": "685733618",
+                            "name": "ChristofferLuthman"
+                        },
+                        {
+                            "id": "675034261",
+                            "name": "AndersRunhem"
+                        },
+                        {
+                            "id": "850300186",
+                            "name": "AnnaÖstlundStexgård"
+                        },
+                        {
+                            "id": "533586199",
+                            "name": "ChristerÅkerlund"
+                        },
+                        {
+                            "id": "642572635",
+                            "name": "MatsDecker"
+                        }
+                    ],
+                    "start_date": "2006-02",
+                    "end_date": "2008-01"
+                },
+                {
+                    "employer": {
+                        "id": "107579075939727",
+                        "name": "NarvaInvestorRelations"
+                    },
+                    "start_date": "0000-00",
+                    "end_date": "0000-00"
+                }
+            ],
+            "favorite_athletes": [
+                {
+                    "id": "258635667485350",
+                    "name": "PapyAbedi"
+                },
+                {
+                    "id": "123762264366160",
+                    "name": "MartinKampmann"
+                }
+            ],
+            "education": [
+                {
+                    "school": {
+                        "id": "108864255810727",
+                        "name": "PlaygroundSquad"
+                    },
+                    "year": {
+                        "id": "136328419721520",
+                        "name": "2009"
+                    },
+                    "concentration": [
+                        {
+                            "id": "190195671002419",
+                            "name": "Spelutveckling"
+                        }
+                    ],
+                    "type": "College"
+                },
+                {
+                    "school": {
+                        "id": "111393798878323",
+                        "name": "LjudochBildskolan"
+                    },
+                    "concentration": [
+                        {
+                            "id": "103403619740762",
+                            "name": "Internetutvecklarprogrammetmedinriktning.NET"
+                        }
+                    ],
+                    "type": "College"
+                },
+                {
+                    "school": {
+                        "id": "157981857576896",
+                        "name": "K4Arvidsjaur"
+                    },
+                    "year": {
+                        "id": "113125125403208",
+                        "name": "2004"
+                    },
+                    "concentration": [
+                        {
+                            "id": "141234099275130",
+                            "name": "Jägarspecialist"
+                        }
+                    ],
+                    "type": "College"
+                }
+            ],
+            "gender": "male",
+            "timezone": 8,
+            "locale": "en_US",
+            "languages": [
+                {
+                    "id": "110946885592517",
+                    "name": "Svenska"
+                },
+                {
+                    "id": "106059522759137",
+                    "name": "English"
+                }
+            ],
+            "verified": true,
+            "updated_time": "2012-03-01T03: 21: 04+0000"
+        }
     },
     {
-        "fbId": "",
         "name": "Mauricio Estrella",
+        "username": "mauricioestrella",
         "games": [
-            "Last Rebellion",
-            "Metal Gear Solid HD Collection"
+            {
+                "_id": 40,
+                "title": "Battlefield 3"
+            },
+            {
+                "_id": 167,
+                "title": "The Elder Scrolls V: Skyrim"
+            },
+            {
+                "_id": 227,
+                "title": "GoldenEye 007: Reloaded"
+            }
         ],
         "tags": [
-            "Adventure",
-            "Multiplayer"
+            {
+                "_id": 0,
+                "title": "Sports"
+            },
+            {
+                "_id": 0,
+                "title": "Racing"
+            },
+            {
+                "_id": 0,
+                "title": "Action"
+            }
         ],
         "following": [
             "Sports",
             "Action",
             "First Person-Shooter"
-        ]
+        ],
+        "facebook": {
+            "id": "544666676"
+        }
     },
     {
-        "fbId": "",
         "name": "John Torres",
+        "username": "john.torres.h",
         "games": [
-            "Final Fantasy XIII",
-            "Ico & Shadow of the Colossus Collection"
+            {
+                "_id": 385,
+                "title": "Mortal Kombat"
+            },
+            {
+                "_id": 113,
+                "title": "Dark Souls"
+            },
+            {
+                "_id": 40,
+                "title": "Battlefield 3"
+            }
         ],
         "tags": [
-            "Role Playing",
-            "Fantasy"
+            {
+                "_id": 0,
+                "title": "Sports"
+            },
+            {
+                "_id": 0,
+                "title": "Racing"
+            },
+            {
+                "_id": 0,
+                "title": "Action"
+            }
         ],
         "following": [
             "Sports",
             "Action",
             "First Person-Shooter"
-        ]
+        ],
+        "facebook": {
+            "id": "500378228"
+        }
     },
     {
-        "fbId": "Joacim Gamme",
+        "name": "Joakim Gamme",
+        "username": "628871426",
         "games": [
             "Dungeon Siege III",
             "Dynasty Warriors 6"
         ],
         "tags": [
-            "Fantasy",
-            "Action"
+            {
+                "_id": 0,
+                "title": "Sports"
+            },
+            {
+                "_id": 0,
+                "title": "Racing"
+            },
+            {
+                "_id": 0,
+                "title": "Action"
+            }
         ],
         "following": [
             "Sports",
             "Action",
             "First Person-Shooter"
-        ]
+        ],
+        "facebook": {
+            "id": "628871426"
+        }
     }
 ]

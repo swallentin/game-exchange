@@ -1,50 +1,65 @@
-var fs = require('fs')
-  , DataProvider = require('../lib/dataprovider-memory');
+var Routes = function (_app, _tagProvider, _gameProvider, _memberProvider) {
+  var app = _app;
+  var tagProvider = _tagProvider;
+  var gameProvider = _gameProvider;
+  var memberProvider = _memberProvider;
 
-exports = module.exports = Routes;
-
-function Routes(app) {
-  var _application = app;
-  
-  var gameProvider = DataProvider.create(require('../data/games.json'));
-  var tagProvider = DataProvider.create(require('../data/tags.json'));
-    
-  var by_id = function(provider, req, res, callback) {
-    var id = req.params.id;
+  var by_id = function(id, provider, req, res, callback) {
     provider.findById(id, function(error, doc){
+      callback(error, doc);
+    });
+  };
+  var by_title = function(title, provider, req, res, callback) {
+    provider.findByTitle(title, function(error, doc){
       callback(error, doc);
     });
   };
   
   return {
     register: function() {
-      var app = _application;
-      // games
+
+      // index
       app.get('/', this.index);
+
+      // games
       app.get('/games', this.games);
       app.get('/games/edit', this.edit_game);
       app.get('/games/:id', this.game);
       app.get('/games/:id/edit', this.edit_game);
       app.put('/games/:id', this.put_game);
+
       // tags
       app.get('/tags', this.tags);
       app.get('/tags/edit', this.edit_tag);
       app.get('/tags/:id', this.tag);
       app.get('/tags/:id/edit', this.edit_tag);
       app.put('/tags/:id', this.put_tag);
+
+     // profile
+      app.get('/profile/:username', this.profile_by_username);
+      app.get('/profile/:username/edit', this.profile_edit);
+      app.get('/profile', this.profile);
+
+      app.get('/debug/profile/all', this.debug_profile_all);
+      app.get('/debug/profile/:id', this.debug_profile);
+      
+
     },
     
     index: function(req, res) {
      gameProvider.findAll(function(err, games){
        tagProvider.findAll(function(err, tags){
-         res.render('index.jade',
-           {
-             locals: {
-               title: 'Welcome to Foundation using Express with Jade and Stylus.',
-               games: games,
-               tags: tags
-           }
-         });  
+         memberProvider.findAll(function(err, profiles){
+            res.render('index.jade',
+              {
+                locals: {
+                  title: 'Welcome to Foundation using Express with Jade and Stylus.',
+                  games: games,
+                  tags: tags,
+                  profiles: profiles
+              }
+            });   
+         });
        })
      });
     },
@@ -61,7 +76,8 @@ function Routes(app) {
     },
     
     game: function(req, res) {
-      by_id(gameProvider, req, res, function(error, doc) {
+      var id = req.params.id;
+      by_id(id, gameProvider, req, res, function(error, doc) {
         res.render('games/game.jade',
         {
           locals: {
@@ -73,7 +89,8 @@ function Routes(app) {
     },
     
     edit_game: function(req, res) {
-      by_id(gameProvider, req, res, function(err, doc){
+      var id = req.params.id;
+      by_id(id, gameProvider, req, res, function(err, doc){
         res.render('games/edit.jade', {
           locals: {
             title: 'Add a new game',
@@ -104,7 +121,8 @@ function Routes(app) {
     },
     
     tag: function(req, res) {
-      by_id(tagProvider, req, res, function(error, doc) {
+      var id = req.params.id;
+      by_id(id, tagProvider, req, res, function(error, doc) {
         res.render('tags/tag.jade',
         {
           locals: {
@@ -116,7 +134,8 @@ function Routes(app) {
     },
     
     edit_tag: function(req, res) {
-      by_id(tagProvider, req, res, function(err, doc){
+      var id = req.params.id;
+      by_id(title, tagProvider, req, res, function(err, doc){
         res.render('tags/edit.jade', {
           locals: {
             title: 'Add a new tag',
@@ -133,7 +152,54 @@ function Routes(app) {
       tagProvider.save(tag, function(err, tags) {
         res.redirect('/tags/'+tags[0]._id);
       });
-    }
+    },
+
+    profile: function(req, res) {
+      
+      if(!req.session.auth) {
+        res.redirect('/auth/facebook');
+        return;
+      }
+      var username = req.session.auth.facebook.user.username;
+      if(!username)
+        username = req.session.auth.facebook.user.id;
+
+      res.redirect('/profile/' + username);
+
+    },
     
+    profile_by_username: function(req, res) {
+
+      var username = req.params.username;
+      
+      // res.send(req.session.auth.facebook.user.id);
+       
+      memberProvider.findByUsername(username, function (err, doc) {        
+        res.render('profile/index.jade', {
+          locals: {
+            title: 'Profile',
+            profile: doc
+          }
+        });
+      });
+    },
+    
+    debug_profile_all: function(req, res) {
+
+      memberProvider.findAll(function (err, docs) {        
+        res.send(docs);
+      });
+    },
+    
+    debug_profile: function(req, res) {
+
+      var id = req.params.id;
+      
+      memberProvider.findByFacebookId(id, function (err, doc) {
+        res.send(doc);
+      });
+    }
   }
-}
+};
+
+module.exports = Routes;

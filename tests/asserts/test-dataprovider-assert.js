@@ -1,6 +1,6 @@
 var assert = require('assert');
-var data = require('../data/games.json');
-var Provider = require('../lib/dataprovider-memory');
+var data = require('../../data/games.json');
+var Provider = require('../../lib/dataproviders/memory/dataprovider-memory.js');
 var provider = Provider.create(data);
 
 assert.ok( provider !== undefined);
@@ -11,7 +11,7 @@ provider.findById(115, function(err, doc){
     expected = doc;
 });
 
-provider.findByTitel('Darksiders', function (err, doc) {
+provider.findByTitle('Darksiders', function (err, doc) {
     assert.equal(expected._id, doc._id);
     assert.ok(err === null);
     assert.ok(doc !== null);

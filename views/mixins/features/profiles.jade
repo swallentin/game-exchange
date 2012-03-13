@@ -1,0 +1,15 @@
+mixin profiles-list(list)
+  ul.profiles
+    - for profile in list
+      mixin profile-list-item(profile)
+
+mixin profile-list-item(profile)
+  li  
+    a(href='/profile/'+profile.username) #{profile.name}
+
+mixin profile(profile)
+  mixin profile-image('small')
+  p #{profile.name}
+
+mixin profile-image(size)
+  img(src='https://graph.facebook.com/' + profile.facebook.id + '/picture?type=' + size)

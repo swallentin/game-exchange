@@ -1,0 +1,294 @@
+{
+    "lastAccess": 1331523509176,
+    "cookie": {
+        "originalMaxAge": 14400000,
+        "expires": "2012-03-12T07:37:19.863Z",
+        "httpOnly": true,
+        "path": "/"
+    },
+    "auth": {
+        "facebook": {
+            "user": {
+                "id": "664271190",
+                "name": "Stephan Wallentin",
+                "first_name": "Stephan",
+                "last_name": "Wallentin",
+                "link": "http://www.facebook.com/stephan.wallentin",
+                "username": "stephan.wallentin",
+                "work": [
+                    {
+                        "employer": {
+                            "id": "269012261862",
+                            "name": "EF Englishtown"
+                        },
+                        "location": {
+                            "id": "106324046073002",
+                            "name": "Shanghai, China"
+                        },
+                        "position": {
+                            "id": "138025946232509",
+                            "name": "Instigator"
+                        },
+                        "start_date": "2011-01"
+                    },
+                    {
+                        "employer": {
+                            "id": "110231972330203",
+                            "name": "Creuna"
+                        },
+                        "location": {
+                            "id": "106505586052951",
+                            "name": "Stockholm, Sweden"
+                        },
+                        "position": {
+                            "id": "165647693483232",
+                            "name": "Tech Lead, Agile Developer"
+                        },
+                        "with": [
+                            {
+                                "id": "585596499",
+                                "name": "Petronella Turesson"
+                            },
+                            {
+                                "id": "638304697",
+                                "name": "Pär Axelsson"
+                            },
+                            {
+                                "id": "568924149",
+                                "name": "Pär Fröberg"
+                            },
+                            {
+                                "id": "702262921",
+                                "name": "Fredrik Marcus"
+                            },
+                            {
+                                "id": "1323840471",
+                                "name": "Markus Bergh"
+                            },
+                            {
+                                "id": "567813754",
+                                "name": "Markus Björk"
+                            },
+                            {
+                                "id": "587839127",
+                                "name": "Martin Odhelius"
+                            }
+                        ],
+                        "start_date": "2008-04",
+                        "end_date": "2011-04"
+                    },
+                    {
+                        "employer": {
+                            "id": "109435382417297",
+                            "name": "Drop It"
+                        },
+                        "location": {
+                            "id": "106505586052951",
+                            "name": "Stockholm, Sweden"
+                        },
+                        "position": {
+                            "id": "144095685610402",
+                            "name": "System Developer"
+                        },
+                        "with": [
+                            {
+                                "id": "768553297",
+                                "name": "Fredrik Karlsson"
+                            },
+                            {
+                                "id": "714026957",
+                                "name": "Andreas Norman"
+                            },
+                            {
+                                "id": "605914848",
+                                "name": "Hieu Doan"
+                            },
+                            {
+                                "id": "639287852",
+                                "name": "Henrik Nyström"
+                            },
+                            {
+                                "id": "626098096",
+                                "name": "Johan Ydring"
+                            },
+                            {
+                                "id": "723696723",
+                                "name": "Henric Carlsson"
+                            },
+                            {
+                                "id": "569588335",
+                                "name": "Tobias Nilsson"
+                            },
+                            {
+                                "id": "533578377",
+                                "name": "Tomas Unestad"
+                            },
+                            {
+                                "id": "597946753",
+                                "name": "Markus Ullmark"
+                            },
+                            {
+                                "id": "613632988",
+                                "name": "Mattias Eriksson"
+                            },
+                            {
+                                "id": "631348503",
+                                "name": "Magnus von Wachenfeldt"
+                            },
+                            {
+                                "id": "721849417",
+                                "name": "Johan Hörlén"
+                            },
+                            {
+                                "id": "732577937",
+                                "name": "Tim Ohlén"
+                            },
+                            {
+                                "id": "670646423",
+                                "name": "Timea Eriksson"
+                            },
+                            {
+                                "id": "647421499",
+                                "name": "Björn Ehlert"
+                            },
+                            {
+                                "id": "701303828",
+                                "name": "Dick Wennberg"
+                            },
+                            {
+                                "id": "612171833",
+                                "name": "Calle Bjernekull"
+                            },
+                            {
+                                "id": "580882746",
+                                "name": "Johan Driessen"
+                            },
+                            {
+                                "id": "717357039",
+                                "name": "Cecilia Bingert"
+                            },
+                            {
+                                "id": "1840337353",
+                                "name": "Christian Ulvaeus"
+                            },
+                            {
+                                "id": "579965956",
+                                "name": "Carl Magnus Swahn"
+                            },
+                            {
+                                "id": "630131238",
+                                "name": "Andreas Nylin"
+                            },
+                            {
+                                "id": "685733618",
+                                "name": "Christoffer Luthman"
+                            },
+                            {
+                                "id": "675034261",
+                                "name": "Anders Runhem"
+                            },
+                            {
+                                "id": "850300186",
+                                "name": "Anna Östlund Stexgård"
+                            },
+                            {
+                                "id": "533586199",
+                                "name": "Christer Åkerlund"
+                            },
+                            {
+                                "id": "642572635",
+                                "name": "Mats Decker"
+                            }
+                        ],
+                        "start_date": "2006-02",
+                        "end_date": "2008-01"
+                    },
+                    {
+                        "employer": {
+                            "id": "107579075939727",
+                            "name": "Narva Investor Relations"
+                        },
+                        "start_date": "0000-00",
+                        "end_date": "0000-00"
+                    }
+                ],
+                "favorite_athletes": [
+                    {
+                        "id": "258635667485350",
+                        "name": "Papy Abedi"
+                    },
+                    {
+                        "id": "123762264366160",
+                        "name": "Martin Kampmann"
+                    }
+                ],
+                "education": [
+                    {
+                        "school": {
+                            "id": "108864255810727",
+                            "name": "Playground Squad"
+                        },
+                        "year": {
+                            "id": "136328419721520",
+                            "name": "2009"
+                        },
+                        "concentration": [
+                            {
+                                "id": "190195671002419",
+                                "name": "Spelutveckling"
+                            }
+                        ],
+                        "type": "College"
+                    },
+                    {
+                        "school": {
+                            "id": "111393798878323",
+                            "name": "Ljud och Bildskolan"
+                        },
+                        "concentration": [
+                            {
+                                "id": "103403619740762",
+                                "name": "Internetutvecklarprogrammet med  inriktning .NET"
+                            }
+                        ],
+                        "type": "College"
+                    },
+                    {
+                        "school": {
+                            "id": "157981857576896",
+                            "name": "K4 Arvidsjaur"
+                        },
+                        "year": {
+                            "id": "113125125403208",
+                            "name": "2004"
+                        },
+                        "concentration": [
+                            {
+                                "id": "141234099275130",
+                                "name": "Jägarspecialist"
+                            }
+                        ],
+                        "type": "College"
+                    }
+                ],
+                "gender": "male",
+                "timezone": 8,
+                "locale": "en_US",
+                "languages": [
+                    {
+                        "id": "110946885592517",
+                        "name": "Svenska"
+                    },
+                    {
+                        "id": "106059522759137",
+                        "name": "English"
+                    }
+                ],
+                "verified": true,
+                "updated_time": "2012-03-01T03:21:04+0000"
+            },
+            "accessToken": "AAAEOb98V4yoBAOULlmIrk97JgJ5YM3TqODVxR3ZBXLJy4OuToS2HG4bZBNT39JYnpf12dm189ae7qH6CP7p2DqtFHzzSycCH5yoZCgtYgZDZD"
+        },
+        "loggedIn": true
+    }
+}

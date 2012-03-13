@@ -1,6 +1,6 @@
 var testCase  = require('nodeunit').testCase;
 var data = require('../data/games.json');
-var Provider = require('../lib/dataprovider-memory');
+var Provider = require('dataproviders/memory/dataprovider-memory.js');
 
 
 exports['data provider'] = testCase({
