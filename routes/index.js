@@ -1,4 +1,4 @@
-var Routes = function (_app, _tagProvider, _gameProvider, _memberProvider) {
+var Routes = function (_app, _tagProvider, _gameProvider, _memberProvider, db) {
   var app = _app;
   var tagProvider = _tagProvider;
   var gameProvider = _gameProvider;
@@ -101,11 +101,11 @@ var Routes = function (_app, _tagProvider, _gameProvider, _memberProvider) {
     },
     
     put_game: function(req, res) {
-      var game = req.body.game;
-      game._id = req.params.id === 'undefined'? undefined : req.params.id;
+      var game = new gameProvider.Game(req.body.game);
+      game._id = req.params.id;
 
-      gameProvider.save(game, function(err, games) {
-        res.redirect('/games/'+games[0]._id);
+      gameProvider.update(game, function(err) {
+        res.redirect('/games/'+game._id);
       });
     },
     

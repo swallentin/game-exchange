@@ -7,6 +7,12 @@
 :: Page Name 1
 :: Page Name 2
 */
+body {
+  background: #fff3db;
+}
+div.panel {
+  background: #c84648;
+}
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
