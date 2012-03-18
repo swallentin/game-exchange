@@ -8,8 +8,8 @@ block primary-content
       label(for='tag_title') Title :
       input(type='text', id='tag_title', name='tag[title]', value=tag.title)
     div
-      label(for='tag_information') Information :
-      textarea(id='tag_information', name='tag[information]', rows=20 ) #{tag.information}
+      label(for='tag_description') Description :
+      textarea(id='tag_description', name='tag[description]', rows=20 ) #{tag.description}
     div
       input(type='submit', value='Send')
 

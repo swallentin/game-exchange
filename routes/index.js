@@ -104,7 +104,7 @@ var Routes = function (_app, _tagProvider, _gameProvider, _memberProvider, db) {
       var game = new gameProvider.Game(req.body.game);
       game._id = req.params.id;
 
-      gameProvider.update(game, function(err) {
+      gameProvider.update(game, function(err  ) {
         res.redirect('/games/'+game._id);
       });
     },
@@ -135,7 +135,7 @@ var Routes = function (_app, _tagProvider, _gameProvider, _memberProvider, db) {
     
     edit_tag: function(req, res) {
       var id = req.params.id;
-      by_id(title, tagProvider, req, res, function(err, doc){
+      by_id(id, tagProvider, req, res, function(err, doc){
         res.render('tags/edit.jade', {
           locals: {
             title: 'Add a new tag',
@@ -146,10 +146,10 @@ var Routes = function (_app, _tagProvider, _gameProvider, _memberProvider, db) {
     },
     
     put_tag: function(req, res) {
-      var tag = req.body.tag;
-      tag._id = req.params.id === 'undefined'? undefined : req.params.id;
+      var tag = new tagProvider.Game(req.body.tag);
+      tag._id = req.params.id;
 
-      tagProvider.save(tag, function(err, tags) {
+      tagProvider.update(tag, function(err, tags) {
         res.redirect('/tags/'+tags[0]._id);
       });
     },

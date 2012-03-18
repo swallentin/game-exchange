@@ -9,14 +9,6 @@ var express = require('express')
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/mydatabase');
 
-//var DataProvider = require('./lib/dataproviders/memory/dataprovider-memory.js').DataProvider;
-//var MemberProvider = require('./lib/dataproviders/memory/memberprovider-memory.js').MemberProvider;
-//var Authentication = require('./lib/authentication').Authentication;
-
-//var memberProvider = new MemberProvider(require('./data/members.json'));
-//var gameProvider = new DataProvider(require('./data/games.json'));
-//var tagProvider = new DataProvider(require('./data/tags.json'));
-
 var TagProvider = require('./lib/dataproviders/mongodb/tagprovider-mongo.js').TagProvider;
 var GameProvider = require('./lib/dataproviders/mongodb/gameprovider-mongo.js').GameProvider;
 var MemberProvider = require('./lib/dataproviders/mongodb/memberprovider-mongo.js').MemberProvider;
@@ -57,31 +49,7 @@ app.configure('production', function(){
   app.use(express.errorHandler()); 
 });
 
-
 routes.register();
-// Routes
-// 
-// app.get('/empty', function(req, res){
-//   res.render('empty.jade', {});
-// });
-// 
-// 
-// app.get('/', routes.index);
-// app.get('/games', routes.games);
-// app.get('/games/edit', routes.edit_game);
-// app.get('/games/:id', routes.game);
-// app.get('/games/:id/edit', routes.edit_game);
-// app.put('/games/:id', routes.put_game);
-
-
-// app.get('/game/edit/:id', routes.edit_game);
-
-
-// app.post('/games/new', routes.post_new_game);
-
-// app.get('/', function (req, res) {
-//   res.render('home');
-// });
 
 var port = process.env.PORT || 3000;
 app.listen(port);

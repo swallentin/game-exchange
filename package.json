@@ -7,6 +7,8 @@
     , "stylus": ">= 0.0.1"
     , "jade": ">= 0.0.1"
     , "everyauth": ""
+    , "mongoose-auth": ""
     , "mongoose": ""
+    , "connect-redis": ""
   }
 }
